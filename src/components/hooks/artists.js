@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getArtists } from '../../services/musicBrainsAPI';
 
 export const useGetArtists = () => {
   const [query, setQuery] = useState('');
@@ -15,6 +16,7 @@ export const useGetArtists = () => {
     setSearchTerm(query);
   };
 
-  return { artists, handleSubmit, query, setQuery };
+
+  return { artists: artists.artists, count: artists.count, handleSubmit, query, setQuery };
 
 }; 

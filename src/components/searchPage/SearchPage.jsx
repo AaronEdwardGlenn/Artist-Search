@@ -4,7 +4,7 @@ import { useGetArtists } from '../hooks/artists';
 
 
 const SearchPage = () => {
-  const { artists, handleSubmit, query, setQuery } = useGetArtists();
+  const { artists, handleSubmit, query, count, setQuery } = useGetArtists();
 
 
   return (
@@ -15,6 +15,7 @@ const SearchPage = () => {
         <input type='text' value={query} onChange={({ target }) => setQuery(target.value)} />
         <button>Search</button>
       </form>
+      {count && <p>{count} results</p>}
       <Artists artists={artists} />
     </>
   );
