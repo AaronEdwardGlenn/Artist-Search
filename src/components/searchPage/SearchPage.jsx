@@ -1,27 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import Artists from '../artists/Artists.jsx';
+import { useGetArtists } from '../hooks/artists';
 
-const SearchPage = ({ artists }) => {
-  const artstsList = artists.map(artist => {
-    <li key={artist.id} >
-      <Link to={`/artistSearch/artist/${artist.id}`} >
-        {artists.name}
-      </Link>
-    </li>;
-  });
+
+const SearchPage = () => {
+  const { artists, handleSubmit, query, setQuery } = useGetArtists();
+
 
   return (
-    <ul>
-      {artstsList}
-    </ul>
+    
+    <>
+      <form onSubmit={handleSubmit} >
+        <p>Search for Artists</p>
+        <input type='text' value={query} onChange={({ target }) => setQuery(target.value)} />
+        <button>Search</button>
+      </form>
+      <Artists artists={artists} />
+    </>
   );
 };
 
 
-
-SearchPage.propTypes = {
-  artists: PropTypes.array,
-};
 
 export default SearchPage;
