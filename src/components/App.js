@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import SearchPage from './searchPage/SearchPage.jsx';
 import Albums from './albums/Albums.jsx';
+import Album from './albums/Album.jsx';
 
 
 export default function App() {
@@ -12,8 +13,8 @@ export default function App() {
     <Router>
       <Route exact path="/artistSearch/" component={SearchPage} />
       <Route exact path="/artistSearch/artist/:artist" component={Albums} />
-      {/* <Route path="/artistSearch/artist/album/:album" component={} />
-      <Route path="/artistSearch/artist/album/lyrics/:lyrics" component={} /> */}
+      <Route exact path="/artistSearch/artist/album/:album" component={Album} />
+      {/* <Route path="/artistSearch/artist/album/lyrics/:lyrics" component={} /> */}
     </Router>
   );
 }
