@@ -1,24 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import useGetAlbums from '../hooks/albums';
+import { useGetAlbums } from '../hooks/albums';
 
-const Albums = ({ match }) => {
-  console.log(match);
-  
-  const artistId = match.params.artist;
+const Albums = ({ match }) => {  
+  const { artistName, artistId } = match.params;
 
-  const { albums } = useGetAlbums(artistId);
+  const albums = useGetAlbums(artistId);
 
-  const albumList = albums.map(album => {
-    <li key={album.id} >
-      <Link to={`/artistSearch/artist/album/${album.title}`}>
-        <img src={album.cover} />
-        <p>{album.title}</p>
-        <p>{album.date}</p>
-      </Link>
-    </li>;
-  });
+  const albumList = albums.map(album => {  
+      let src;
+      let alt;
+
+      if(album?.coverArt?.front === false){
+        src = 'https://m.mrjatt-mp3.com/cover.jpg'; 
+        alt = 'no cover art available';
+      } else {
+        src = `http://coverartarchive.org/release/${album.id}/front`;
+        alt = `${album.title} cover art`;
+      }
+    
+      return (
+        <li key={album.id} >
+          <Link to={`/${artistName}/${artistId}/${album.id}`}>
+            <img style={{ 'width': '15vw' }} src={src} alt={alt} />
+            <p>{album.title}</p>
+            <p>{album.date}</p>
+          </Link>
+        </li>
+      );
+    });
+
   return (
     <ul>
       {albumList}
@@ -29,11 +41,10 @@ const Albums = ({ match }) => {
 Albums.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      artist: PropTypes.shape({
-        id: PropTypes.string.isRequired
-      })
-    })
-  }),
+      artistName: PropTypes.string.isRequired,
+      artistId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 export default Albums;
