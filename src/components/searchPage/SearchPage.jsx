@@ -8,9 +8,8 @@ const SearchPage = () => {
 
 
   return (
-    
     <>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <p>Search for Artists</p>
         <input type='text' value={query} onChange={({ target }) => setQuery(target.value)} />
         <button>Search</button>

@@ -9,10 +9,11 @@ const Albums = ({ match }) => {
   const { albums } = useGetAlbums(artistId);
 
   const albumList = albums.map(album => {
-    <li key={album.release_id} >
+    <li key={album.id} >
       <Link to={`/artistSearch/artist/album/${album.title}`}>
-        <img src={album.image} />
+        <img src={album.cover} />
         <p>{album.title}</p>
+        <p>{album.date}</p>
       </Link>
     </li>;
   });
