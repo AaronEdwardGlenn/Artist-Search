@@ -34,5 +34,4 @@ Album.propTypes = {
   }).isRequired
 };
 
-
 export default Album;

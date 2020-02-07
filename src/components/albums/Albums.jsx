@@ -8,28 +8,20 @@ const Albums = ({ match }) => {
 
   const albums = useGetAlbums(artistId);
 
-  const albumList = albums.map(album => {  
-      let src;
-      let alt;
-
-      if(album?.coverArt?.front === false){
-        src = 'https://m.mrjatt-mp3.com/cover.jpg'; 
-        alt = 'no cover art available';
-      } else {
-        src = `http://coverartarchive.org/release/${album.id}/front`;
-        alt = `${album.title} cover art`;
-      }
+  const albumList = albums.map(album => {
+    const src = album?.coverArt?.front ? `http://coverartarchive.org/release/${album.id}/front` : 'https://m.mrjatt-mp3.com/cover.jpg';
+    const alt = album?.coverArt?.front ? `${album.title} cover art` : 'No cover art available';
     
-      return (
-        <li key={album.id} >
-          <Link to={`/${artistName}/${artistId}/${album.id}`}>
-            <img style={{ 'width': '15vw' }} src={src} alt={alt} />
-            <p>{album.title}</p>
-            <p>{album.date}</p>
-          </Link>
-        </li>
-      );
-    });
+    return (
+      <li key={album.id} >
+        <Link to={`/${artistName}/${artistId}/${album.id}`}>
+          <img style={{ 'width': '15vw' }} src={src} alt={alt} />
+          <p>{album.title}</p>
+          <p>{album.date}</p>
+        </Link>
+      </li>
+    );
+  });
 
   return (
     <ul>
