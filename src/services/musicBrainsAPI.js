@@ -13,3 +13,13 @@ export const getAlbums = artistId => {
       date: album.date,
       coverArt: album['cover-art-archive'] })));
 };
+
+export const getSongs = albumId => {
+  return fetch(`http://musicbrainz.org/ws/2/recording?release=${albumId}&fmt=json`)
+    .then(res => res.json())
+    .then(data => data.recordings)
+    .then(data => data.map(({ title, id }) => ({
+      title,
+      id, 
+    })));
+};
