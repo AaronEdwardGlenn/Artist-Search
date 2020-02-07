@@ -3,8 +3,8 @@ import { getArtists } from '../../services/musicBrainsAPI';
 
 export const useGetArtists = () => {
   const [query, setQuery] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [artists, setArtists] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('drake');
+  const [artists, setArtists] = useState({ artists:[] });
 
   useEffect(() => {
     getArtists(searchTerm)
@@ -15,6 +15,8 @@ export const useGetArtists = () => {
     event.preventDefault();
     setSearchTerm(query);
   };
+
+  
 
 
   return { artists: artists.artists, count: artists.count, handleSubmit, query, setQuery };

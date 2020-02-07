@@ -3,18 +3,18 @@ import React from 'react';
 //   BrowserRouter as Router,
 //   Route
 // } from 'react-router-dom';
-// import SearchPage from './searchPage/SearchPage.jsx';
+import SearchPage from './searchPage/SearchPage.jsx';
 
 
 export default function App() {
   return (
-    // <Router>
+  //   <Router>
   // {/* <Route path="/artistSearch/:search" component={} />
   // <Route path="/artistSearch/artist/:artist" component={} />
   // <Route path="/artistSearch/artist/album/:album" component={} />
   // <Route path="/artistSearch/artist/album/lyrics/:lyrics" component={} /> */}
-    // <SearchPage />
-    // </Router>
-    <h1>Hello World </h1>
+    <SearchPage />
+  //   </Router>
+  
   );
 }
