@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import useGetAlbums from '../hooks/albums';
 
 const Albums = ({ match }) => {
-  const artistId = match.params.artist.id;
+  console.log(match);
+  
+  const artistId = match.params.artist;
 
   const { albums } = useGetAlbums(artistId);
 
