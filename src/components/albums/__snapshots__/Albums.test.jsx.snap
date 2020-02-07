@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Albums component matches its snapshot 1`] = `
+<ul>
+  <li>
+    <Link
+      to="///undefined"
+    >
+      <img
+        alt="No cover art available"
+        src="https://m.mrjatt-mp3.com/cover.jpg"
+        style={
+          Object {
+            "width": "15vw",
+          }
+        }
+      />
+      <p />
+      <p />
+    </Link>
+  </li>
+</ul>
+`;
