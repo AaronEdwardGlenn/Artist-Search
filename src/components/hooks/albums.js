@@ -4,7 +4,7 @@ import { getAlbumCover } from '../../services/coverArtAPI';
 
 
 export const useGetAlbums = (artistId) => {
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState(['Calvin Coolidge']);
 
   useEffect(() => {
     getAlbums(artistId)
