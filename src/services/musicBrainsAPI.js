@@ -10,5 +10,6 @@ export const getAlbums = artistId => {
     .then(data => data.map(album => ({ 
       title: album.title, 
       id: album.id, 
-      date: album.date })));
+      date: album.date,
+      coverArt: album['cover-art-archive'] })));
 };

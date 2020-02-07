@@ -6,13 +6,26 @@ import { useGetAlbums } from '../hooks/albums';
 const Albums = ({ match }) => {  
   const artistId = match.params.artist;
 
-  const albums = useGetAlbums(artistId);  
+  const albums = useGetAlbums(artistId);
 
-  const albumList = albums.map(album => {
+  const albumList = albums.map(album => {  
+
+
+    let src;
+    let alt;
+
+    if(!album.coverArt || album.coverArt.front === false){
+      src = 'https://m.mrjatt-mp3.com/cover.jpg'; 
+      alt = 'no cover art available';
+    } else {
+      src = `http://coverartarchive.org/release/${album.id}/front`;
+      alt = `${album.title} cover art`;
+    }
+    
     return (
       <li key={album.id} >
         <Link to={`/artistSearch/artist/album/${album.title}`}>
-          <img src={`http://coverartarchive.org/release/${album.id}/front`} />
+          <img style={{ 'width': '15vw' }} src={src} alt={alt} />
           <p>{album.title}</p>
           <p>{album.date}</p>
         </Link>
