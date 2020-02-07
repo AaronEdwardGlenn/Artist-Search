@@ -4,22 +4,15 @@ import { Link } from 'react-router-dom';
 import { useGetAlbums } from '../hooks/albums';
 
 const Albums = ({ match }) => {  
-  const artistId = match.params.artist;
+  const { artistName, artistId } = match.params;
 
   const albums = useGetAlbums(artistId);
 
-  const albumList = albums
-    .sort((a, b) => {
-      b.date - a.date; 
-    }
-    )
-    .map(album => {  
-
-
+  const albumList = albums.map(album => {  
       let src;
       let alt;
 
-      if(!album.coverArt || album.coverArt.front === false){
+      if(album?.coverArt?.front === false){
         src = 'https://m.mrjatt-mp3.com/cover.jpg'; 
         alt = 'no cover art available';
       } else {
@@ -29,7 +22,7 @@ const Albums = ({ match }) => {
     
       return (
         <li key={album.id} >
-          <Link to={`/artistSearch/artist/album/${album.id}`}>
+          <Link to={`/${artistName}/${artistId}/${album.id}`}>
             <img style={{ 'width': '15vw' }} src={src} alt={alt} />
             <p>{album.title}</p>
             <p>{album.date}</p>
@@ -37,7 +30,6 @@ const Albums = ({ match }) => {
         </li>
       );
     });
-
 
   return (
     <ul>
@@ -49,9 +41,10 @@ const Albums = ({ match }) => {
 Albums.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      artist: PropTypes.string.isRequired
-    })
-  })
+      artistName: PropTypes.string.isRequired,
+      artistId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 export default Albums;

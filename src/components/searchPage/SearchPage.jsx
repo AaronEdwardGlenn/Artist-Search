@@ -2,10 +2,8 @@ import React from 'react';
 import Artists from '../artists/Artists.jsx';
 import { useGetArtists } from '../hooks/artists';
 
-
 const SearchPage = () => {
   const { artists, handleSubmit, query, count, setQuery } = useGetArtists();
-
 
   return (
     <>
@@ -19,7 +17,5 @@ const SearchPage = () => {
     </>
   );
 };
-
-
 
 export default SearchPage;

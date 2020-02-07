@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { useGetSongs } from '../hooks/song';
+import { useGetSongs } from '../hooks/songs';
 
 const Album = ({ match }) => {
-  const albumId = match.params.album;
+  const { artistName, artistId, albumId } = match.params;
+
   const songs = useGetSongs(albumId); 
+
   const songList = songs.map(song => {
     return (
-
       <li key={song.id}>
-        <Link to={`/artistSearch/artist/album/lyrics/${song.title}`} >
+        <Link to={`/${artistName}/${artistId}/${albumId}/${song.title}`} >
           <p>{song.title}</p>
         </Link>
       </li>
     );});
-
-
   
   return (
     <ul>
@@ -25,14 +24,14 @@ const Album = ({ match }) => {
   );
 };
 
-
 Album.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      album: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-  songs: PropTypes.array.isRequired,
+      artistName: PropTypes.string.isRequired,
+      artistId: PropTypes.string.isRequired,
+      albumId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 
