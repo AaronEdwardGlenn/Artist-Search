@@ -1,0 +1,32 @@
+.Albums {
+  position: fixed;
+  height: 100vh;
+  width: 33vw;
+  right: 0;
+  top: 0;
+  background: white;
+  border-left: 3px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+  padding-top: 1000px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    border: 1px solid;
+    margin: 30px;
+  }
+
+  img {
+    width: 15vw;
+  }
+}
