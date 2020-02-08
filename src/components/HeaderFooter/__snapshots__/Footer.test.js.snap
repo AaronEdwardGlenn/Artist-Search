@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footerz component renders a footer 1`] = `
+<Fragment>
+  <footer
+    className="Footer"
+  >
+    <p>
+      © 2020 -  Nick Brimmer ||  Dr. Mellow ||  Aaron Edward Glenn
+    </p>
+  </footer>
+</Fragment>
+`;
