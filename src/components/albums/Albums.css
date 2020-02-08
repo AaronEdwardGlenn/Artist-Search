@@ -13,6 +13,7 @@
   align-items: center;
   overflow: auto;
   margin-top: 0;
+  animation: slidein .5s 1;
 
   ul {
     display: flex;
@@ -46,5 +47,15 @@
 
   span {
     font-size: 2rem;
+  }
+
+  @keyframes slidein {
+    from {
+      right: -100vw;
+    }
+
+    to {
+      right: 0;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useGetLyrics } from '../hooks/lyrics';
+import styles from './Lyrics.css';
 
 const Lyrics = ({ match }) => {
   const { artistName, songTitle } = match.params;
@@ -8,11 +9,11 @@ const Lyrics = ({ match }) => {
   const lyrics = useGetLyrics(artistName, songTitle);
 
   return (
-    <>
+    <div className={styles.Lyrics}>
       <h1>{songTitle}</h1>
       <h2>By {artistName}</h2>
       <p>{lyrics}</p>
-    </>
+    </div>
   );
 };
 

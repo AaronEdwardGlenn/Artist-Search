@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import { useGetSongs } from '../hooks/songs';
 import { Link } from 'react-router-dom';
 
-const SongList = ({ artistName, artistId, albumId }) => {
-  console.log(albumId);
-  
+const SongList = ({ artistName, artistId, albumId }) => {  
   const songs = useGetSongs(albumId);
-  console.log(songs);
   
   const songList = songs.map(song => {
     return (
