@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useGetAlbums } from '../hooks/albums';
+import styles from './Albums.css';
 
 const Albums = ({ match }) => {  
   const { artistName, artistId } = match.params;
@@ -15,7 +16,7 @@ const Albums = ({ match }) => {
     return (
       <li key={album.id} >
         <Link to={`/${artistName}/${artistId}/${album.id}`}>
-          <img style={{ 'width': '15vw' }} src={src} alt={alt} />
+          <img src={src} alt={alt} />
           <p>{album.title}</p>
           <p>{album.date}</p>
         </Link>
@@ -24,7 +25,8 @@ const Albums = ({ match }) => {
   });
 
   return (
-    <ul>
+    <ul className={styles.Albums}>
+      <li><p>Albums by {artistName}</p></li>
       {albumList}
     </ul>
   );
