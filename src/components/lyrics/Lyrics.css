@@ -1,0 +1,26 @@
+.Lyrics {
+  position: fixed;
+  top: 15vh;
+  width: 66vw;
+  height: 100vh;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  animation: slidein .5s 1;
+
+  p {
+    width: 70%;
+    line-height: 1.5;
+  }
+
+  @keyframes slidein {
+    from {
+      left: -100vw;
+    }
+
+    to {
+      left: 0;
+    }
+  }
+}
