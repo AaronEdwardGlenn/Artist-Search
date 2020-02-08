@@ -3,5 +3,7 @@
     color: white; 
     margin-top: 80px;
     text-align: center;
-    padding-right: 30px; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

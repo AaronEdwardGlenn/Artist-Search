@@ -1,4 +1,5 @@
 .Albums {
+  z-index: 1;
   position: fixed;
   height: 100vh;
   width: 33vw;
@@ -8,25 +9,40 @@
   border-left: 3px solid;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   overflow: auto;
-  padding-top: 1000px;
 
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid;
   }
 
   li {
     list-style: none;
-    border: 1px solid;
     margin: 30px;
+    text-align: center;
   }
 
   img {
     width: 15vw;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  span {
+    font-size: 2rem;
   }
 }

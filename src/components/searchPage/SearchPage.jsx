@@ -15,7 +15,7 @@ const SearchPage = () => {
           <button>Search</button>
         </div>
       </form>
-      {count && <p>{count} results</p>}
+      {count && <p className={styles.Count}>{count} results</p>}
       <Artists artists={artists} />
     </>
   );

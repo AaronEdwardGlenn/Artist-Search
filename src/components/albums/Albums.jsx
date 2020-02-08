@@ -26,7 +26,7 @@ const Albums = ({ match }) => {
 
   return (
     <ul className={styles.Albums}>
-      <li><p>Albums by {artistName}</p></li>
+      <li><span className='albums-by'>Albums by {artistName}</span></li>
       {albumList}
     </ul>
   );

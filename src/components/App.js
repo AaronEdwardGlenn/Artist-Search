@@ -13,11 +13,11 @@ import Footer from './HeaderFooter/Footer.js';
 export default function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Router>
-        <Route exact path="/" component={SearchPage} />
-        <Route exact path="/:artistName/:artistId" component={Albums} />
-        <Route exact path="/:artistName/:artistId/:albumId" component={Album} />
+        <Route path="/" component={SearchPage} />
+        <Route path="/:artistName/:artistId" component={Albums} />
+        <Route path="/:artistName/:artistId/:albumId" component={Album} />
         <Route path="/:artistName/:artistId/:albumId/:songTitle" component={Lyrics} />
       </Router>
       <Footer />
