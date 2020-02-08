@@ -15,7 +15,6 @@ const Artists = ({ artists }) => {
   return (
     <ul>
       {artistList}
-      
     </ul>
   );
 };

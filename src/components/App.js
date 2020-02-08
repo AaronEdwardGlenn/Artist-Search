@@ -10,7 +10,6 @@ import Lyrics from './lyrics/Lyrics.jsx';
 import Header from './HeaderFooter/Header.js';
 import Footer from './HeaderFooter/Footer.js';
 
-
 export default function App() {
   return (
     <>

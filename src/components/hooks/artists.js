@@ -16,9 +16,5 @@ export const useGetArtists = () => {
     setSearchTerm(query);
   };
 
-
-
-
   return { artists: artists.artists, count: artists.count, handleSubmit, query, setQuery };
-
 }; 
