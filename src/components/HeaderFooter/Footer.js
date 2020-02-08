@@ -6,7 +6,9 @@ export default class Footer extends Component {
     return (
       <>
         <footer className={styles.Footer}>
+          <img className={styles.headerImg} src="src/assets/header.png" /> 
           <p>&copy; 2020 -  Nick Brimmer ||  Dr. Mellow ||  Aaron Edward Glenn</p>
+          
         </footer>
       </>
     );

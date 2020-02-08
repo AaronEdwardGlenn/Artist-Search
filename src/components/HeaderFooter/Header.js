@@ -6,7 +6,6 @@ export default class Header extends Component {
     return (
       <>
         <header className={styles.Header}>
-          <h1>Artist Search Application</h1>
         </header>
       </>
     );

@@ -37,5 +37,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;  
+    text-decoration: none;
+    color: white;
+    font-size: 15px
   }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+
+/* H1 and Headers get Raleway Heavy, font-weight: 800 */
+.Header {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+}
+
+
+/* Sub-Headings get Raleway, font-weight 300 */
+.subHeader {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+
+/* Any body text gets Montserrat, font-weight 300 */
+.bodyText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }

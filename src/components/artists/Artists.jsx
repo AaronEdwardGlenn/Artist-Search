@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Artists.css';
 
 const Artists = ({ artists }) => {
-    const artistList = artists.map(artist => (
+  const artistList = artists.map(artist => (
     <li key={artist.id} >
       <Link to={`/${artist.name}/${artist.id}`}>
         <p>{artist.name}</p>

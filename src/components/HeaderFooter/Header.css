@@ -1,7 +1,56 @@
-.Header {
-  background-image: url('https://media.giphy.com/media/KzikBkhzLyVOdpZm20/giphy.gif');
-  background-repeat: space;
-  background-size: contain;
-  color: #202c2d;
-  text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html, body{
+  height: 100%;
+  font-weight: 800;
+}
+
+body{
+  background: #000000;
+  font-family: Arial;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    height: 45%;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: white;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: rgb(73, 203, 255);
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #323232;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: rgb(73, 203, 255);
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: white;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
 }
