@@ -6,7 +6,7 @@ import { useGetSongs } from '../hooks/songs';
 const Album = ({ match }) => {
   const { artistName, artistId, albumId } = match.params;
 
-  const songs = useGetSongs(albumId); 
+  // const songs = useGetSongs(albumId); 
 
   const songList = songs.map(song => {
     return (

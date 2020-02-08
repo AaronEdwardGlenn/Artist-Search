@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useGetAlbums } from '../hooks/albums';
 import styles from './Albums.css';
+import { useGetSongs } from '../hooks/songs';
+import SongList from '../songlist/Songlist.jsx';
 
 const Albums = ({ match }) => {  
   const { artistName, artistId } = match.params;
@@ -14,21 +16,41 @@ const Albums = ({ match }) => {
     const alt = album?.coverArt?.front ? `${album.title} cover art` : 'No cover art available';
     
     return (
-      <li key={album.id} >
-        <Link to={`/${artistName}/${artistId}/${album.id}`}>
-          <img src={src} alt={alt} />
-          <p>{album.title}</p>
-          <p>{album.date}</p>
-        </Link>
-      </li>
+      // Details style rendering
+      <>
+        <details>
+          <summary>
+            <img src={src} alt={alt} />
+            <p>{album.title}</p>
+            <p>{album.date}</p>
+          </summary>
+        <SongList artistName={artistName} artistId={artistId} albumId={album.id} />
+        </details>
+      </>
+
+      // List style rendering
+      // <li key={album.id} >
+      //   <Link to={`/${artistName}/${artistId}/${album.id}`}>
+      //     <img src={src} alt={alt} />
+      //     <p>{album.title}</p>
+      //     <p>{album.date}</p>
+      //   </Link>
+      // </li>
     );
   });
 
   return (
-    <ul className={styles.Albums}>
-      <li><span className='albums-by'>Albums by {artistName}</span></li>
+    // Details style rendering
+    <summary className={styles.Albums}>
+      <span>Albums by {artistName}</span>
       {albumList}
-    </ul>
+    </summary>
+
+    // List style rendering
+    // <ul className={styles.Albums}>
+    //   <li><span className='albums-by'>Albums by {artistName}</span></li>
+    //   {albumList}
+    // </ul>
   );
 };
 

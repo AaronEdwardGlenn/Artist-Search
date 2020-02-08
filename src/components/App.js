@@ -17,7 +17,7 @@ export default function App() {
       <Router>
         <Route path="/" component={SearchPage} />
         <Route path="/:artistName/:artistId" component={Albums} />
-        <Route path="/:artistName/:artistId/:albumId" component={Album} />
+        {/* <Route path="/:artistName/:artistId/:albumId" component={Album} /> */}
         <Route path="/:artistName/:artistId/:albumId/:songTitle" component={Lyrics} />
       </Router>
       <Footer />
