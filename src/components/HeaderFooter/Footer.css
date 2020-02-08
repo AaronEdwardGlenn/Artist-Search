@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet');
+
 .Footer {
     background-color: black;
     color: white; 
     margin-top: 80px;
     text-align: center;
     padding-right: 30px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headerImg {
+    width: 100%;
 }
