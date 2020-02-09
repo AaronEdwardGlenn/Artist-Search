@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useGetSongs } from '../hooks/songs';
+import styles from './Album.css';
 
 const Album = ({ match }) => {
   const { artistName, artistId, albumId } = match.params;
@@ -11,7 +12,7 @@ const Album = ({ match }) => {
   const songList = songs.map(song => {
     return (
       <li key={song.id}>
-        <Link to={`/${artistName}/${artistId}/${albumId}/${song.title}`} >
+        <Link  className={styles.songName} to={`/${artistName}/${artistId}/${albumId}/${song.title}`} >
           <p>{song.title}</p>
         </Link>
       </li>

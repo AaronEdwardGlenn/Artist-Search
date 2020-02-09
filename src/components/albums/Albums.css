@@ -4,7 +4,8 @@
   width: 33vw;
   right: 0;
   top: 0;
-  background: white;
+  background: black;
+  color: white;
   border-left: 3px solid;
   display: flex;
   flex-direction: column;
@@ -12,12 +13,20 @@
   align-items: center;
   overflow: auto;
   padding-top: 1000px;
+  
+  
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
 
   li {
