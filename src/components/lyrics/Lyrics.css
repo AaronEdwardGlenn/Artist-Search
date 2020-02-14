@@ -21,6 +21,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     color: white;
+    white-space: pre-line;
   }
 
   /* H1 and Headers get Raleway Heavy, font-weight: 800 */
