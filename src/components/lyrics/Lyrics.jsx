@@ -9,11 +9,11 @@ const Lyrics = ({ match }) => {
   const lyrics = useGetLyrics(artistName, songTitle);
 
   return (
-    <>
-      <h1 className={styles.Header} >{songTitle}</h1>
-      <h2 className={styles.subHeader} >By {artistName}</h2>
-      <p className={styles.bodyText} >{lyrics}</p>
-    </>
+    <section className={styles.Lyrics}>
+      <h1>{songTitle}</h1>
+      <h2>By {artistName}</h2>
+      <p>{lyrics}</p>
+    </section>
   );
 };
 

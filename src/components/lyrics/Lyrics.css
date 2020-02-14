@@ -3,31 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
 
-/* H1 and Headers get Raleway Heavy, font-weight: 800 */
-.Header {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  font-size: 3rem;
-  color: white;
-}
-
-
-/* Sub-Headings get Raleway, font-weight 300 */
-.subHeader {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  font-size: 3rem;
-  color: white;
-}
-
-
-/* Any body text gets Montserrat, font-weight 300 */
-.bodyText {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  color: white;
-
-}
 .Lyrics {
   position: fixed;
   top: 15vh;
@@ -36,12 +11,32 @@
   padding-left: 60px;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: black;
   animation: slidein .5s 1;
 
+  /* Any body text gets Montserrat, font-weight 300 */
   p {
     width: 70%;
     line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: white;
+  }
+
+  /* H1 and Headers get Raleway Heavy, font-weight: 800 */
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: white;
+  }
+
+  /* Sub-Headings get Raleway, font-weight 300 */
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: white;
   }
 
   @keyframes slidein {
