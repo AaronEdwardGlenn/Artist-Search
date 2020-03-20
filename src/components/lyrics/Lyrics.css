@@ -41,6 +41,13 @@
     color: white;
   }
 
+  button {
+    width: 100px;
+    font-size: 1rem;
+    color: white;
+    background: #000000;
+  }
+
   @keyframes slidein {
     from {
       left: -100vw;
@@ -48,6 +55,20 @@
 
     to {
       left: 0;
+    }
+  }
+}
+
+.SlideOut {
+  animation: slideout .5s 1;
+  
+  @keyframes slideout {
+    from {
+      left: 0;
+    }
+
+    to {
+      left: -100vw;
     }
   }
 }

@@ -8,7 +8,12 @@ const Lyrics = ({ match }) => {
   const history = useHistory();
   const { artistName, artistId, albumId, songTitle } = match.params;
 
-  const goBack = () => history.replace(`/${artistName}/${artistId}/${albumId}`);
+  const goBack = ({ target }) => {
+    target.parentNode.classList.add(styles.SlideOut);
+    setTimeout(() => {
+      history.replace(`/${artistName}/${artistId}/${albumId}`);
+    }, 500);
+  };
 
   const lyrics = useGetLyrics(artistName, songTitle);
 
