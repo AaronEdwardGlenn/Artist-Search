@@ -13,6 +13,7 @@
   flex-direction: column;
   background: black;
   animation: slidein .5s 1;
+  overflow: auto;
 
   /* Any body text gets Montserrat, font-weight 300 */
   p {
