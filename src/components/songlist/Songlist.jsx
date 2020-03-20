@@ -14,17 +14,19 @@ const SongList = ({ artistName, artistId, albumId }) => {
         </Link>
       </p>
     );
-  })
+  });
 
   return (
     <>
-    {songList}
+      {songList}
     </>
-  )
-}
+  );
+};
 
 SongList.propTypes = {
-  albumId: PropTypes.string,
-}
+  albumId: PropTypes.string.isRequired,
+  artistId: PropTypes.string.isRequired,
+  artistName: PropTypes.string.isRequired
+};
 
 export default SongList;

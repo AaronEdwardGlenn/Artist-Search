@@ -5,7 +5,7 @@
 
 .Lyrics {
   position: fixed;
-  top: 15vh;
+  top: 0;
   width: 66vw;
   height: 100vh;
   padding-left: 60px;
