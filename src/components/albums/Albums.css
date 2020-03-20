@@ -63,11 +63,11 @@
 
   button {
     position: fixed;
-    top: 95vh;
-    right: 2vw;
-    width: 90px;
+    bottom: 2vh;
+    left: 69vw;
     color: white;
     background: black;
+    font-size: 1rem;
   }
 
   @keyframes slidein {

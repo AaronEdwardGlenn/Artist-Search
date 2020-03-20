@@ -6,7 +6,7 @@
 .Lyrics {
   position: fixed;
   top: 0;
-  width: 66vw;
+  width: 65vw;
   height: 100vh;
   padding-left: 60px;
   display: flex;
@@ -42,7 +42,9 @@
   }
 
   button {
-    width: 100px;
+    position: fixed;
+    right: 35vw;
+    bottom: 2vh;
     font-size: 1rem;
     color: white;
     background: #000000;
