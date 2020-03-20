@@ -61,6 +61,15 @@
     margin-top: 30px;
   }
 
+  button {
+    position: fixed;
+    top: 95vh;
+    right: 2vw;
+    width: 90px;
+    color: white;
+    background: black;
+  }
+
   @keyframes slidein {
     from {
       right: -100vw;
@@ -68,6 +77,20 @@
 
     to {
       right: 0;
+    }
+  }
+}
+
+.SlideOut {
+  animation: slideout .5s 1;
+  
+  @keyframes slideout {
+    from {
+      right: 0;
+    }
+
+    to {
+      right: -100vw;
     }
   }
 }

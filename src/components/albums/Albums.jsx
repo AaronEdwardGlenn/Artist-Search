@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { useGetAlbums } from '../hooks/albums';
 import styles from './Albums.css';
-import { useGetSongs } from '../hooks/songs';
 import SongList from '../songlist/Songlist.jsx';
+import { useHistory } from 'react-router-dom';
 
 const Albums = ({ match }) => {  
   const { artistName, artistId } = match.params;
+  const history = useHistory();
+
+  const goBack = ({ target }) => {
+    target.parentNode.classList.add(styles.SlideOut);
+    setTimeout(() => {
+      history.replace('');
+    }, 500);
+  };
 
   const albums = useGetAlbums(artistId);
 
@@ -16,7 +23,6 @@ const Albums = ({ match }) => {
     const alt = album?.coverArt?.front ? `${album.title} cover art` : 'No cover art available';
     
     return (
-      // Details style rendering
       <>
         <details>
           <summary>
@@ -24,33 +30,20 @@ const Albums = ({ match }) => {
             <p>{album.title}</p>
             <p>{album.date}</p>
           </summary>
-        <SongList artistName={artistName} artistId={artistId} albumId={album.id} />
+          <SongList artistName={artistName} artistId={artistId} albumId={album.id} />
         </details>
       </>
-
-      // List style rendering
-      // <li key={album.id} >
-      //   <Link to={`/${artistName}/${artistId}/${album.id}`}>
-      //     <img src={src} alt={alt} />
-      //     <p>{album.title}</p>
-      //     <p>{album.date}</p>
-      //   </Link>
-      // </li>
     );
   });
 
   return (
-    // Details style rendering
-    <summary className={styles.Albums}>
-      <span>Albums by {artistName}</span>
-      {albumList}
-    </summary>
-
-    // List style rendering
-    // <ul className={styles.Albums}>
-    //   <li><span className='albums-by'>Albums by {artistName}</span></li>
-    //   {albumList}
-    // </ul>
+    <>
+      <summary className={styles.Albums}>
+        <span>Albums by {artistName}</span>
+        {albumList}
+        <button onClick={goBack}>&#8674;</button>
+      </summary>
+    </>
   );
 };
 
